@@ -1,0 +1,8 @@
+cuando cargas encomiendas
+    si el comisionista tiene disponibilidad(que no supere la capacidad del vehiculo)
+    else(error)
+        se agenda para otro dia
+
+Cuando se carga una encomiendas
+    se genera un idTracking (posibles valores: en casa matriz, en viaje, en destino, entregado)
+    

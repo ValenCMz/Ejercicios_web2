@@ -1,0 +1,30 @@
+// Implemente el siguiente requerimiento siguiendo el patrón MVC.
+//  No es necesario realizar las vistas ni helpers, solo controlador(es),
+//  modelo(s) y las invocaciones a la vista.
+    Punto 1----------------------------------------------------------------------
+     Listar los pokemones de una determinada especie y mayores a un nivel en una pokedex específica.
+        - Informar los errores que pueden aparecer.
+        - No se espera que haya un usuario logeado.
+    Punto 2----------------------------------------------------------------------
+    Agregar un pokemon a una pokedex. 
+    *Se debe verificar que la pokedex no cuente actualmente con un pokemon de esa especie
+        -Chequear que el usuario esté logueado
+        -Informar los errores que pueden aparecer. 
+    Punto 3----------------------------------------------------------------------
+    Un usuario debe poder eliminar un pokemon de una pokedex propia.
+    *Se debe verificar que la pokedex cuente con al menos 1 pokemon una vez eliminado.
+        En caso contrario, no permitir la eliminación
+        -Chequear que el usuario esté logueado
+        -Informar los errores que pueden aparecer. 
+    Punto 4----------------------------------------------------------------------
+    a. Defina los endpoints necesarios para dar soporte por API REST a las tres tablas de la BD.
+        No es necesario implementarlos.
+    b. Siguiendo el patrón MVC implemente la API REST solo para el siguiente requerimiento.
+     No implemente los MODELOS. Puede usar la Vista de API REST brindada por la cátedra 
+     (no es necesario copiarla).
+        -Listar todas las especies de pokemons y listar una sola determinada por su ID.
+
+//BASE DE DATOS
+// POKEDEX(id: int, id_user: int, version: string)
+// ESPECIEPOKEMON(id: int, nombre: string, tipo: string, debilidad: string)
+// POKEMON(id: int, nivel: int, resistencia: int, apodo: string, id_especie: int, id_pokedex: int)
