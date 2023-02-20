@@ -1,5 +1,4 @@
 <?php
-require('./libs/smarty-4.3.0/libs/Smarty.class.php');
 
 class pokemonView{
 
