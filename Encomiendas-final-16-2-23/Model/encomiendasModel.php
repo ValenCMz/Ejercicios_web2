@@ -1,16 +1,17 @@
 <?php
 
-class encomiendasModel{
+class encomiendaModel{
     private $db;
 
     function __construct(){
         $this->db = new PDO('mysql:host=localhost;' . 'dbname=db_encomiendas;charset=utf8;' , 'root' , '');
-    }
+    }      
 
-    function getComisionistasPeso($peso){
-        $query = $this->db->prepare("SELECT * FROM comisionista WHERE capacidad_vehiculo >= ?");
-        $query->execute(array($peso));
-        return $query->fetchAll(PDO::FETCH_OBJ);
+    function getEncomiendaPorComisionistaYFecha($id_comisionista,$fecha){
+        //voy a buscar una encomienda de un comisionista especifico y una fecha dada
+        $query = $this->db->prepare("SELECT * FROM encomienda WHERE id_comisionista = ? AND fecha = ?");
+        $query->execute(array($id_comisionista,$fecha));
+        return $query->fetch(PDO::FETCH_OBJ);
     }
 
     function agregarEncomienda($peso,$destinatario,$id_comisionista,$id_tracking,$estado,$fecha){

@@ -1,0 +1,28 @@
+// Implemente el siguiente requerimiento siguiendo el patrón MVC.
+//  No es necesario realizar las vistas ni helpers, solo controlador(es), modelo(s) 
+//  y las invocaciones a la vista.
+    Punto 1----------------------------------------------------------------------
+    // Mostrar todas las valoraciones realizadas a un álbum.
+    // - Se deben controlar posibles errores.
+    Punto 2----------------------------------------------------------------------
+    // Buscar todos los artistas que tengan una cantidad de álbumes mayor o igual a cierto número.
+    // - Se deben controlar posibles errores.
+    // - Se debe mostrar el artista con su cantidad de álbumes.
+    Punto 3----------------------------------------------------------------------
+    // Valorar un álbum.
+    // - Se deben controlar posibles errores.
+    // - Chequear que el usuario no haya valorado el artista anteriormente.
+    // - Si el usuario ya lo valoró, se reemplaza si la nueva es menor.
+    Punto 4----------------------------------------------------------------------
+    // Agregar un álbum al sistema.
+    // - Se debe controlar que el usuario esté logueado al sistema.
+    // - Se deben controlar posibles errores de carga.
+    // - Se debe controlar que no exista un álbum con el mismo nombre.
+    // - SI el álbum pertenece a un artista premium, se debe insertar 
+    // automáticamente una valoración de 5 estrellas para ese álbum.
+
+BASE DE DATOS
+    ARTISTA(id: int, nombre: string, premium: boolean)
+    ALBUM(id: int, titulo: string, productor: string, genero: string, 
+    fechaLanzamiento: string, id_artista: int)
+    VALORACION(id: int, estrellas: int, id_album: int,id_user: int)
