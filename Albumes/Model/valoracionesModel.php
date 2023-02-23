@@ -19,4 +19,22 @@ class valoracionesModel{
         $query->execute(array($id_album));
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+
+    function getValoracionDelAlbumPorElUsuario($id_album, $id_user){
+        $query = $this->db->prepare("SELECT * FROM VALORACION WHERE id_album = ? AND id_user = ?");
+        $query->execute(array($id_album,$id_user));
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
+
+    function insertarValoracion($estrellas, $id_album, $id_user){
+        $query = $this->db->prepare("INSERT INTO VALORACION(estrellas,id_album,id_user)VALUES(?,?,?)");
+        $query->execute(array($estrellas,$id_album,$id_user));
+        return $this->db->lastInsertId();
+    }
+
+    function updateValoracion($estrellas,$id_album,$id_user){
+        $query = $this->db->prepare("UPDATE VALORACION SET estrellas = ? WHERE id_album = ? AND id_user =?");
+        $query->execute(array($estrellas,$id_album,$id_user));
+        return $this->db->lastInsertId();
+    }
 }
