@@ -1,0 +1,40 @@
+La plataforma de vuelos argentina Vol.ar está desarrollando un sistema para la venta de pasajes aéreos online.
+La idea es ofrecer un portal donde los usuarios puedan realizar búsquedas de vuelos, consulta y compra de
+pasajes.
+Además, quieren desarrollar una sección privada de administración, donde los agentes de viajes carguen los
+vuelos ofrecidos.
+
+    Punto 1----------------------------------------------------------------------
+        Implemente la función del modelo para modificar la fecha de un vuelo.
+    Punto 2----------------------------------------------------------------------
+        Implemente el siguiente requerimiento siguiendo el patrón MVC. No es necesario realizar las vistas, solo
+        controlador(es), modelo(s) y las invocaciones a la vista.
+        - Eliminar vuelos sin ventas
+        Se deberá verificar que el agente está logueado.
+    Punto 3----------------------------------------------------------------------   
+        Un usuario logueado podrá realizar la compra de un pasaje desde un botón comprar, indicando la cantidad de
+        personas.
+        -Se debe verificar que el vuelo tenga disponibilidad suficiente para la solicitud.
+        -Informar los errores que pueden aparecer
+    Punto 4----------------------------------------------------------------------   
+        Buscador de vuelos nacionales de una aerolínea determinada
+        Un usuario podrá realizar una búsqueda de vuelos desde un formulario. Se deben listar todos los vuelos que
+        coincidan con la búsqueda. Se deben cumplir los siguientes requerimientos:
+        -Se debe informar si el vuelo tiene pasajeros en primera clase.
+        -Informar los errores que pueden aparecer.
+    Punto 5----------------------------------------------------------------------   
+        Se desea implementar una API REST para exponer los datos de la plataforma a terceros.
+        1. Defina los endpoints necesarios para dar soporte por API REST a las tablas AEROLINEA y VUELO. No es
+        necesario implementarlos.
+        2. Siguiendo el patrón MVC implemente la API REST solo para el siguiente requerimiento. No implemente los
+        MODELOS. Puede usar la Vista de API REST brindada por la cátedra.
+        Listar todos los vuelos y listar uno solo determinado por su ID.
+        ACLARACIÓN: No es necesario implementar el router del sistema ni el archivo .htaccess
+
+BASE DE DATOS
+    AEROLINEA(id: int, nombre: string)
+    VUELO(id: int, origen: string, destino: string, fecha: string, estado: string, capacidad: int, internacional: bool,
+    id_aerolinea: int)
+    Además, nos brinda una tabla donde se almacena la información de pasajes vendidos.
+    PASAJE(id: int, fecha_venta: string, clase: int, equipaje: int, id_vuelo: int, id_usuario: int)
+    Donde clase es un número entre el 1 y el 3, y equipaje es el peso en kilos.
